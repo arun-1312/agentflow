@@ -2,10 +2,8 @@
 
 **A beautiful, fully local multi-agent RAG system that turns your documents into intelligent research reports.**
 
-Built from scratch as a **2027 placement project** — no paid APIs, no cloud credits, everything runs on your laptop.
+Built from scratch - no paid APIs, no cloud credits, everything runs on your laptop.
 
-![AgentFlow Demo](https://via.placeholder.com/800x400/111113/22d3ee?text=AgentFlow+Demo+Screenshot)  
-*(Add your actual screenshot/GIF here — highly recommended)*
 
 ## ✨ What is AgentFlow?
 
@@ -20,10 +18,7 @@ It uses **Retrieval-Augmented Generation (RAG)** so the agents stay grounded in 
 
 Everything runs **100% locally** using Ollama + LangGraph — zero cost, zero data leaves your laptop.
 
-## Why I Built This
-
-As a pre-final year CSE student, I wanted to build something that actually stands out in 2027 placements.  
-Most students make basic chatbots or todo apps. I built a **real agentic system** that demonstrates:
+## I built a **real agentic system** that demonstrates:
 
 - Modern AI orchestration (LangGraph)
 - Production-ready RAG pipeline
@@ -75,56 +70,60 @@ This project helped me deeply understand agentic workflows, streaming, state man
    npm run dev
 5. Open http://localhost:3000 in your browser
 
-Done! No environment variables, no API keys, no complicated setup.
+## Done! No environment variables, no API keys, no complicated setup.
 
-How to Use
+## 🚀 How to Use
 
-Upload Documents (optional but recommended)
-Drag & drop .txt, .md, or .pdf files (or paste content into .txt files)
+1. **Upload Documents** *(optional but recommended)*: Drag & drop `.txt`, `.md`, or `.pdf` files.
+2. **Write your goal**: Tell the agents exactly what you need them to analyze.
+3. **Trigger Workflow**: Click submit and watch the agents work and stream their thoughts in real-time!
+4. **Export**: Once finished, you can copy the final answer or download the full synthesis report as a PDF.
 
-Write your goal
+---
 
-Click Start Workflow
-Watch the agents work in real-time
-Once finished, you can:
-Copy the final answer
-Download the full report as PDF
+## 🏗️ Architecture Overview
 
+All inter-agent communication happens through a stateful **LangGraph** workflow.
 
-Architecture Overview
+* **Supervisor** ➔ Decides which agent acts next based on the pipeline state.
+* **Researcher** ➔ Uses RAG to retrieve relevant, grounded information from the embedded documents.
+* **Critic** ➔ Checks quality, evaluates gaps, and actively reduces hallucinations.
+* **Writer** ➔ Creates a highly structured response utilizing only the approved research.
+* **Editor** ➔ Polishes the final output for formatting, grammar, and tone.
 
-Supervisor → Decides which agent acts next
-Researcher → Uses RAG to retrieve relevant information
-Critic → Checks quality and reduces hallucinations
-Writer → Creates structured response
-Editor → Polishes the final output
+---
 
-All communication happens through a stateful LangGraph workflow.
+## 🧠 Challenges I Faced & What I Learned
 
-Challenges I Faced & What I Learned
+* Handling proper streaming with LangGraph's custom stream mode.
+* Making RAG reliable with local embeddings and vector stores.
+* Building a beautiful, responsive UI that feels premium and eliminates infinite scrolling.
+* Debugging agent loops and managing complex state across multiple LLM calls.
+* Making the entire system feel "alive" with real-time UI updates and trace logs.
 
-Handling proper streaming with LangGraph's custom stream mode
-Making RAG reliable with local embeddings
-Building a beautiful, responsive UI that feels premium
-Debugging agent loops and state management
-Making the entire system feel "alive" with real-time updates
+> *This project taught me more about modern AI engineering and systems architecture than any course.*
 
-This project taught me more about modern AI engineering than any course.
-Future Improvements (Roadmap)
+---
 
-Docker + docker-compose one-click setup
-Support for more file types (better PDF parsing)
-Memory between sessions (persistent knowledge base)
-Evaluation metrics dashboard
-Export to Markdown/Notion
+## 🗺️ Future Improvements (Roadmap)
 
-Built by Arun Eswaran
-Pre-final year B.Tech CSE Student at SRM University
-Passionate about AI agents, full-stack development, and building real products.
+- [ ] Docker + `docker-compose` one-click setup
+- [ ] Support for more complex file types (advanced PDF and image parsing)
+- [ ] Memory between sessions (persistent knowledge base)
+- [ ] Evaluation metrics dashboard
+- [ ] Export to Markdown/Notion integrations
 
-LinkedIn: linkedin.com/in/arun-eswaran-dev
-GitHub: github.com/yourusername
+---
 
-If you're a recruiter or fellow student and find this project useful, feel free to connect or star the repo ⭐
+## 👨‍💻 About the Developer
 
-Made with ❤️ and vibe coding.
+Built by **Arun Eswaran** *Pre-final year B.Tech CSE core student at SRM University*
+
+Passionate about AI agents, full-stack development, and building real-world products that solve complex problems.
+
+* 🔗 **LinkedIn:** [linkedin.com/in/arun-eswaran-dev](https://www.linkedin.com/in/arun-eswaran-dev)
+* 🐙 **GitHub:** [github.com/arun-1312](https://github.com/arun-1312)
+
+If you're a recruiter or a fellow student and find this project interesting, feel free to connect or star the repo! ⭐
+
+*Made with ❤️ and vibe coding.*
