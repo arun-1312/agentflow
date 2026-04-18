@@ -1,0 +1,8 @@
+AI placements 2027 notes (internal):
+
+- Companies increasingly expect hands-on experience with RAG: chunking, embeddings, and retrieval evaluation.
+- Strong focus on code-assist tooling: Copilot-like inline completion paired with unit tests and refactoring discipline.
+- Agent frameworks show up in take-homes: multi-agent routing, critique loops, and tool-calling patterns.
+- Vector DB familiarity matters: indexing strategy, metadata filters, and hybrid (keyword + vector) search.
+- MLE roles often test experiment tracking basics: logging metrics/artifacts and reproducibility workflows.
+

@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AgentFlow
 
-## Getting Started
+**A beautiful, fully local multi-agent RAG system that turns your documents into intelligent research reports.**
 
-First, run the development server:
+Built from scratch as a **2027 placement project** — no paid APIs, no cloud credits, everything runs on your laptop.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![AgentFlow Demo](https://via.placeholder.com/800x400/111113/22d3ee?text=AgentFlow+Demo+Screenshot)  
+*(Add your actual screenshot/GIF here — highly recommended)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ What is AgentFlow?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+AgentFlow is a **production-grade multi-agent AI workflow dashboard** that lets you:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Upload your notes, research papers, PDFs, or lecture notes
+- Give any goal in plain English
+- Watch a team of specialized AI agents (Researcher → Critic → Writer → Editor) collaborate in real-time
+- Get a clean, well-structured final report with proper reasoning trace
 
-## Learn More
+It uses **Retrieval-Augmented Generation (RAG)** so the agents stay grounded in *your* documents instead of hallucinating.
 
-To learn more about Next.js, take a look at the following resources:
+Everything runs **100% locally** using Ollama + LangGraph — zero cost, zero data leaves your laptop.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Why I Built This
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+As a pre-final year CSE student, I wanted to build something that actually stands out in 2027 placements.  
+Most students make basic chatbots or todo apps. I built a **real agentic system** that demonstrates:
 
-## Deploy on Vercel
+- Modern AI orchestration (LangGraph)
+- Production-ready RAG pipeline
+- Full-stack development with beautiful UI
+- Local-first architecture (privacy + zero cost)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project helped me deeply understand agentic workflows, streaming, state management, and what companies actually look for in GenAI roles.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+- **Multi-Agent Collaboration** — Researcher, Critic, Writer & Editor work together
+- **Real RAG** — Upload documents → agents retrieve relevant context
+- **Live Streaming UI** — Watch agents think in real-time
+- **Beautiful Collapsible Agent Trace** — Clean card-style interface
+- **Final Synthesis** — Highlighted, polished final answer with Copy & Download as PDF
+- **Error Handling** — Friendly messages if Ollama is not running
+- **100% Local & Private** — No OpenAI, no API keys, no internet after setup
+- **Modern Tech Stack** — Next.js 15 + TypeScript + Tailwind + shadcn/ui
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (App Router), TypeScript, Tailwind CSS, shadcn/ui
+- **AI Orchestration**: LangGraph.js + Ollama (local LLM)
+- **RAG**: ChromaDB + nomic-embed-text embeddings
+- **LLM**: Qwen2.5:7B (or any model you prefer via Ollama)
+- **Deployment**: Docker-ready (one-command local setup)
+
+## How to Run Locally (Super Simple)
+
+### Prerequisites
+- Node.js (v20 or above)
+- Ollama installed and running (`ollama serve`)
+- At least one model pulled: `ollama pull qwen2.5:7b`
+
+### Step-by-step Setup
+
+1. Clone the repo
+   ```bash
+   git clone https://github.com/yourusername/agentflow.git
+   cd agentflow
+2. Install dependencies
+   ```bash
+   npm install
+3. Make sure Ollama is running and model is ready
+   ```bash
+   ollama pull qwen2.5:7b
+4. Start the development server
+   ```bash
+   npm run dev
+5. Open http://localhost:3000 in your browser
+
+Done! No environment variables, no API keys, no complicated setup.
+
+How to Use
+
+Upload Documents (optional but recommended)
+Drag & drop .txt, .md, or .pdf files (or paste content into .txt files)
+
+Write your goal
+
+Click Start Workflow
+Watch the agents work in real-time
+Once finished, you can:
+Copy the final answer
+Download the full report as PDF
+
+
+Architecture Overview
+
+Supervisor → Decides which agent acts next
+Researcher → Uses RAG to retrieve relevant information
+Critic → Checks quality and reduces hallucinations
+Writer → Creates structured response
+Editor → Polishes the final output
+
+All communication happens through a stateful LangGraph workflow.
+
+Challenges I Faced & What I Learned
+
+Handling proper streaming with LangGraph's custom stream mode
+Making RAG reliable with local embeddings
+Building a beautiful, responsive UI that feels premium
+Debugging agent loops and state management
+Making the entire system feel "alive" with real-time updates
+
+This project taught me more about modern AI engineering than any course.
+Future Improvements (Roadmap)
+
+Docker + docker-compose one-click setup
+Support for more file types (better PDF parsing)
+Memory between sessions (persistent knowledge base)
+Evaluation metrics dashboard
+Export to Markdown/Notion
+
+Built by Arun Eswaran
+Pre-final year B.Tech CSE Student at SRM University
+Passionate about AI agents, full-stack development, and building real products.
+
+LinkedIn: linkedin.com/in/arun-eswaran-dev
+GitHub: github.com/yourusername
+
+If you're a recruiter or fellow student and find this project useful, feel free to connect or star the repo ⭐
+
+Made with ❤️ and vibe coding.
